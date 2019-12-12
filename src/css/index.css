@@ -1,0 +1,21 @@
+html,body{
+	background-color: blue;
+}
+.box{
+	width: 300px;
+	height: 200px;
+	background-color: red;
+	background-image: url(../images/timg.jpg);
+	background-size: cover;
+}
+.box2{
+	width: 300px;
+	height: 200px;
+	background-color: red;
+	background-image: url(../images2/timg.jpg);
+	background-size: cover;
+}
+span{
+	width: 200px;
+	height: 200px;
+}
