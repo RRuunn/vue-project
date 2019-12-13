@@ -1,25 +1,19 @@
-
 import VueRouter from 'vue-router';
-import account from './main/account.vue';
-import goodlist from './main/Goodlist.vue'
 
-import login from './subcom/login.vue';
-import register from './subcom/register.vue';
-
+import HomeContainer from './components/tabbar/HomeContainer.vue';
+import memberContainer from './components/tabbar/memberContainer.vue';
+import shopcarContainer from './components/tabbar/shopcarContainer.vue';
+import searchContainer from './components/tabbar/searchContainer.vue';
 
 var router = new VueRouter({
-	routes:[
-		//account goodlist
-		{ path:'/account',
-		 component:account,
-		 children:[
-		 	{path:'login',component:login},
-		 	{path:'register',component:register}
-		 ]
-	},
-		{ path:'/goodlist',component:goodlist}
-	]
-
+	routes:[//配置路由规则
+	{ path:'/',redirect:'/home' },
+	{ path:'/home',component:HomeContainer},
+	{ path:'/member',component:memberContainer},
+	{ path:'/shopcar',component:shopcarContainer},
+	{ path:'/search',component:searchContainer}
+	],
+	linkActiveClass:'mui-active'
 })
-
+//把路由对象暴露出去
 export default router

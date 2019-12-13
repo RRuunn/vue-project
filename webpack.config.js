@@ -18,7 +18,16 @@ module.exports = {
 	module:{
 		rules:[
 			{ test:/\.css$/,use:['style-loader','css-loader']},
-			{ test:/\.(jpg|png|gif|bmp|jpeg)$/,use:'url-loader?limit=28695&name=[hash:8]-[name].[ext]'},
+			{ test:/\.(jpg|png|gif|bmp|jpeg)$/,
+			use:[
+				{
+					loader:'url-loader',
+					options:{
+						esModule:false
+					}
+				}
+			]
+		},
 			{ test:/\.(ttf|eot|svg|woff|woff2)$/,use:'url-loader'},
 			{ test:/\.js$/,use:'babel-loader',exclude:/node_modules/},
 			{ test:/\.vue$/,use:'vue-loader'}
